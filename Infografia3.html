@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía Premium Transporte</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #f5f7fa 0%, #e4e8eb 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .infografia-premium {
+            width: 650px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            position: relative;
+        }
+        
+        .header-premium {
+            background: linear-gradient(135deg, #ff7b00 0%, #ff9500 100%);
+            padding: 25px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-premium::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 60%);
+            transform: rotate(-5deg);
+            z-index: 1;
+        }
+        
+        .titulo-principal {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 32px;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .subtitulo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            margin: 10px 0 0;
+            position: relative;
+            z-index: 2;
+            opacity: 0.9;
+        }
+        
+        .content-premium {
+            padding: 30px;
+            color: #333;
+        }
+        
+        .badge-urgente {
+            background: #e63946;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .ruta-premium {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .ciudad {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 22px;
+            background: #f8f9fa;
+            padding: 12px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        .flecha {
+            margin: 0 15px;
+            color: #ff7b00;
+            font-size: 24px;
+        }
+        
+        .detalles-servicio {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .detalles-servicio::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80px;
+            height: 80px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff7b00" opacity="0.1"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>');
+            background-size: contain;
+        }
+        
+        .lista-beneficios {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .lista-beneficios li {
+            padding: 10px 0 10px 35px;
+            margin-bottom: 8px;
+            position: relative;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .lista-beneficios li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 20px;
+            height: 20px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff7b00"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>');
+            background-size: contain;
+        }
+        
+        .garantia {
+            display: flex;
+            align-items: center;
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+        
+        .garantia i {
+            color: #2196f3;
+            font-size: 24px;
+            margin-right: 15px;
+        }
+        
+        .garantia-texto {
+            font-size: 14px;
+            color: #1976d2;
+        }
+        
+        .contacto-premium {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .llamada-accion {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .boton-whatsapp {
+            display: inline-block;
+            background: #25d366;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+        
+        .boton-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(37, 211, 102, 0.4);
+        }
+        
+        .telefonos {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #666;
+        }
+        
+        .footer-premium {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        
+        .hashtags-premium {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+        
+        .hashtag {
+            background: rgba(255,255,255,0.1);
+            padding: 5px 12px;
+            border-radius: 50px;
+        }
+        
+        .nota-final {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-top: 15px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="infografia-premium">
+        <div class="header-premium">
+            <h1 class="titulo-principal">TRANSPORTE EXPRESS GUAMAL - BOGOTÁ</h1>
+            <p class="subtitulo">Tu encomienda segura cada viernes</p>
+        </div>
+        
+        <div class="content-premium">
+            <div class="badge-urgente">¡RESERVA HOY MISMO!</div>
+            
+            <div class="ruta-premium">
+                <div class="ciudad">GUAMAL</div>
+                <div class="flecha"><i class="fas fa-long-arrow-alt-right"></i></div>
+                <div class="ciudad">BOGOTÁ</div>
+            </div>
+            
+            <div class="detalles-servicio">
+                <h3 style="margin-top: 0; color: #ff7b00; font-family: 'Montserrat', sans-serif;">SERVICIO PROFESIONAL DE CARGA</h3>
+                
+                <ul class="lista-beneficios">
+                    <li>Envíos todos los <strong>viernes</strong> sin excepción</li>                 
+                    <li>Personal capacitado en logística</li>
+                    <li>Precios competitivos sin cobros ocultos</li>
+                </ul>
+                
+                <div class="garantia">
+                    <i class="fas fa-shield-alt"></i>
+                    <div class="garantia-texto">Garantizamos la entrega puntual y en perfecto estado de tu mercancía</div>
+                </div>
+            </div>
+            
+            <div class="contacto-premium">
+                <div class="llamada-accion">¿Listo para enviar tu carga?</div>
+                <a href="https://wa.me/573103176652" class="boton-whatsapp">
+                    <i class="fab fa-whatsapp"></i> CONTÁCTANOS AHORA
+                </a>
+                
+                <div class="telefonos">
+                    <strong>Llama o escribe:</strong><br>
+                    <i class="fas fa-phone"></i> 310 3176652 | <i class="fas fa-phone"></i> 311 6634304
+                </div>              
+                
+            </div>
+        </div>
+        
+        <div class="footer-premium">
+            <div>Confía en el transporte más confiable de la región</div>
+            <div class="hashtags-premium">
+                <span class="hashtag">#CargaSegura</span>
+                <span class="hashtag">#GuamalABogotá</span>
+                <span class="hashtag">#TransporteConfiable</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
